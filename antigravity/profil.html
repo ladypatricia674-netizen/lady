@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya | Portofolio Siswa</title>
+    <meta name="description" content="Biodata diri, riwayat pendidikan, serta keahlian hard & soft skill siswa.">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN & Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkSoft: {
+                            50: '#fff5f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                        },
+                        yellowSoft: {
+                            50: '#fffdf0',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                        },
+                        pastelBg: '#FCFCFB',
+                        cardBg: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-pink': '0 10px 30px -10px rgba(244, 114, 182, 0.25)',
+                        'soft-yellow': '0 10px 30px -10px rgba(250, 204, 21, 0.25)',
+                        'glass': '0 8px 32px 0 rgba(236, 72, 153, 0.07)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF9F6;
+            color: #334155;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .bg-banner-gradient {
+            background: linear-gradient(135deg, #fbcfe8 0%, #fef08a 100%);
+        }
+
+        .nav-tab.active {
+            background-color: #fce7f3;
+            color: #db2777;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(244, 114, 182, 0.2);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col selection:bg-pinkSoft-200 selection:text-pinkSoft-600">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-pinkSoft-100/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                    <div
+                        class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-pinkSoft-400 to-yellowSoft-300 flex items-center justify-center text-white shadow-soft-pink">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-slate-800">My<span
+                                class="text-pinkSoft-500">Portfolio</span></span>
+                        <span
+                            class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-pinkSoft-100 text-pinkSoft-600 border border-pinkSoft-200">Profil
+                            Siswa</span>
+                    </div>
+                </a>
+
+                <nav
+                    class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-slate-100/70 p-1.5 rounded-2xl border border-slate-200/60">
+                    <a href="index.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 flex items-center space-x-2">
+                        <i class="fa-solid fa-house-chimney text-xs"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="profil.html"
+                        class="nav-tab active px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 flex items-center space-x-2">
+                        <i class="fa-solid fa-user text-xs"></i>
+                        <span>Profil</span>
+                    </a>
+                    <a href="jadwal.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 flex items-center space-x-2">
+                        <i class="fa-solid fa-calendar-days text-xs"></i>
+                        <span>Jadwal</span>
+                    </a>
+                    <a href="informatika.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 flex items-center space-x-2">
+                        <i class="fa-solid fa-code text-xs"></i>
+                        <span>Informatika</span>
+                    </a>
+                    <a href="bahasa-indonesia.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 flex items-center space-x-2">
+                        <i class="fa-solid fa-book-open text-xs"></i>
+                        <span>Bahasa Indonesia</span>
+                    </a>
+                </nav>
+
+                <div class="hidden lg:flex items-center space-x-2">
+                    <a href="https://www.instagram.com/ladyypatricia?igsh=MWQyYTc3c3VibTVvbQ==" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-pinkSoft-50 text-pinkSoft-500 hover:bg-pinkSoft-400 hover:text-white transition-all flex items-center justify-center border border-pinkSoft-100 shadow-sm"
+                        title="Instagram">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://wa.me/6285817135476" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-800 hover:text-white transition-all flex items-center justify-center border border-slate-200 shadow-sm"
+                        title="whatsapp">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@anakdonaldtrump?_r=1&_t=ZS-98Cxaj7nFjh" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-yellowSoft-100 text-yellow-700 hover:bg-yellow-400 hover:text-slate-900 transition-all flex items-center justify-center border border-yellowSoft-200 shadow-sm"
+                        title="tiktok">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()"
+                        class="w-10 h-10 rounded-xl bg-pinkSoft-100 text-pinkSoft-600 flex items-center justify-center focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 border-b border-pinkSoft-100 px-4 pt-2 pb-6 space-y-2">
+            <a href="index.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 flex items-center space-x-3">
+                <i class="fa-solid fa-house-chimney w-5 text-pinkSoft-400"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="profil.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold bg-pinkSoft-100 text-pinkSoft-600 flex items-center space-x-3">
+                <i class="fa-solid fa-user w-5 text-pinkSoft-500"></i>
+                <span>Profil Saya</span>
+            </a>
+            <a href="jadwal.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 flex items-center space-x-3">
+                <i class="fa-solid fa-calendar-days w-5 text-yellowSoft-500"></i>
+                <span>Jadwal Pelajaran</span>
+            </a>
+            <a href="informatika.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 flex items-center space-x-3">
+                <i class="fa-solid fa-code w-5 text-pinkSoft-400"></i>
+                <span>Informatika</span>
+            </a>
+            <a href="bahasa-indonesia.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 flex items-center space-x-3">
+                <i class="fa-solid fa-book-open w-5 text-yellowSoft-500"></i>
+                <span>Bahasa Indonesia</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN PROFIL CONTENT -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm relative overflow-hidden">
+            <div class="h-32 sm:h-44 -mx-6 -mt-6 sm:-mx-8 sm:-mt-8 bg-banner-gradient relative">
+                <div class="absolute inset-0 bg-black/5"></div>
+            </div>
+
+            <div
+                class="relative flex flex-col sm:flex-row items-center sm:items-end space-y-4 sm:space-y-0 sm:space-x-6 -mt-16 sm:-mt-20">
+                <img src="Lady.jpeg" alt="Foto Lady Patricia"
+                    class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl object-cover border-4 border-white shadow-lg bg-white">
+
+                <div class="flex-grow text-center sm:text-left space-y-1">
+                    <div class="flex flex-wrap justify-center sm:justify-start items-center gap-2">
+                        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Lady Patricia</h1>
+                        <span
+                            class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-pinkSoft-100 text-pinkSoft-600 border border-pinkSoft-200">Kelas
+                            XI-3</span>
+                    </div>
+                    <p class="text-sm text-slate-500 font-medium">Siswa Sekolah Menengah Atas • Portofolio & Biodata</p>
+                    <div class="flex flex-wrap justify-center sm:justify-start items-center gap-3 pt-2">
+                        <span class="text-xs text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><i
+                                class="fa-solid fa-location-dot text-pinkSoft-500 mr-1"></i> Indonesia</span>
+                        <span class="text-xs text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><i
+                                class="fa-solid fa-school text-yellow-600 mr-1"></i> Sekolah Menengah Atas</span>
+                        <span class="text-xs text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><i
+                                class="fa-regular fa-envelope text-pinkSoft-500 mr-1"></i>
+                            ladypatricia674@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- SEBELAH KIRI: BIODATA & PROFIL INFO -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Card Biodata Diri -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-5">
+                    <div class="flex items-center space-x-3 border-b border-slate-100 pb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-pinkSoft-100 text-pinkSoft-600 flex items-center justify-center">
+                            <i class="fa-solid fa-id-card text-lg"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800">Biodata Diri</h2>
+                            <p class="text-xs text-slate-400">Informasi identitas dan profil siswa</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Nama
+                                Lengkap</span>
+                            <span class="text-sm font-bold text-slate-800">Lady Patricia</span>
+                        </div>
+                        <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+                            <span
+                                class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Kelas</span>
+                            <span class="text-sm font-bold text-pinkSoft-600">XI-3</span>
+                        </div>
+                        <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+                            <span
+                                class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Status</span>
+                            <span class="text-sm font-bold text-emerald-600">Siswa Aktif</span>
+                        </div>
+                        <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+                            <span
+                                class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Email</span>
+                            <span
+                                class="text-sm font-bold text-slate-800 truncate block">ladypatricia674@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Tentang Saya -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
+                    <h2 class="text-xl font-bold text-slate-800 flex items-center space-x-2">
+                        <i class="fa-solid fa-user-gear text-pinkSoft-500"></i>
+                        <span>Tentang Saya</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Saya adalah seorang pelajar yang berdedikasi tinggi dan sangat tertarik pada dunia teknologi
+                        informasi, khususnya dalam pembuatan antarmuka web yang estetik dan intuitif. Selain itu, saya
+                        memiliki kecintaan pada dunia hukum pidana.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Tujuan dari dipublikasikannya website ini adalah untuk mendokumentasikan setiap perjalanan
+                        belajar, tugas mandiri, serta proyek kelompok yang telah diselesaikan dengan penuh rasa tanggung
+                        jawab.
+                    </p>
+                </div>
+
+                <!-- Card Minat & Hobi -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
+                    <h2 class="text-xl font-bold text-slate-800 flex items-center space-x-2">
+                        <i class="fa-solid fa-heart text-pinkSoft-500"></i>
+                        <span>Minat & Hobi</span>
+                    </h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-4 rounded-2xl bg-pinkSoft-50 text-center border border-pinkSoft-100">
+                            <i class="fa-solid fa-code text-pinkSoft-500 text-2xl mb-2"></i>
+                            <h4 class="text-xs font-bold text-slate-700">Web Dev</h4>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-yellowSoft-100 text-center border border-yellowSoft-200">
+                            <i class="fa-solid fa-person-running text-yellow-700 text-2xl mb-2"></i>
+                            <h4 class="text-xs font-bold text-slate-700">Berolahraga</h4>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-pinkSoft-50 text-center border border-pinkSoft-100">
+                            <i class="fa-solid fa-book text-pinkSoft-500 text-2xl mb-2"></i>
+                            <h4 class="text-xs font-bold text-slate-700">Membaca</h4>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-yellowSoft-100 text-center border border-yellowSoft-200">
+                            <i class="fa-solid fa-music text-yellow-700 text-2xl mb-2"></i>
+                            <h4 class="text-xs font-bold text-slate-700">Musik</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Quiz Game: Seberapa Kenal Kamu dengan Lady? -->
+                <div class="bg-gradient-to-br from-white via-pinkSoft-50/30 to-yellowSoft-50/30 p-6 sm:p-8 rounded-3xl border border-pinkSoft-200/80 shadow-sm space-y-5 relative overflow-hidden"
+                    id="lady-quiz-card">
+                    <div class="flex items-center justify-between border-b border-pinkSoft-100 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-pinkSoft-500 text-white flex items-center justify-center shadow-soft-pink">
+                                <i class="fa-solid fa-gamepad text-lg"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-800">Quiz: Seberapa Kenal Kamu dengan Lady?</h2>
+                                <p class="text-xs text-pinkSoft-600 font-semibold">Game interaktif 8 soal pilihan ganda
+                                </p>
+                            </div>
+                        </div>
+                        <span id="quiz-step-badge"
+                            class="px-3 py-1 rounded-full text-xs font-extrabold bg-pinkSoft-100 text-pinkSoft-600 border border-pinkSoft-200">
+                            Soal <span id="quiz-current-num">1</span>/8
+                        </span>
+                    </div>
+
+                    <!-- Progress Bar Quiz -->
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar"
+                            class="bg-gradient-to-r from-pinkSoft-400 to-yellow-400 h-2 rounded-full transition-all duration-300"
+                            style="width: 12.5%"></div>
+                    </div>
+
+                    <!-- Area Pertanyaan -->
+                    <div id="quiz-question-box" class="space-y-4">
+                        <h3 id="quiz-question-text" class="text-base sm:text-lg font-bold text-slate-800 leading-snug">
+                            Memuat pertanyaan...
+                        </h3>
+
+                        <div id="quiz-options-container" class="grid grid-cols-1 gap-2.5">
+                            <!-- Options rendered dynamically -->
+                        </div>
+
+                        <!-- Feedback Message & Next Button -->
+                        <div id="quiz-feedback-box" class="hidden pt-2 space-y-3">
+                            <div id="quiz-feedback-msg"
+                                class="p-3.5 rounded-2xl text-xs font-bold flex items-center space-x-2"></div>
+                            <button id="quiz-next-btn" onclick="nextQuizQuestion()"
+                                class="w-full py-3 rounded-2xl bg-pinkSoft-500 hover:bg-pinkSoft-600 text-white font-bold text-xs shadow-soft-pink transition-all flex items-center justify-center space-x-2">
+                                <span>Lanjut ke Soal Berikutnya</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Area Hasil Akhir Quiz (Hidden by Default) -->
+                    <div id="quiz-result-box" class="hidden text-center py-6 space-y-5">
+                        <div
+                            class="w-20 h-20 rounded-full bg-pinkSoft-100 border-4 border-pinkSoft-200 text-pinkSoft-600 mx-auto flex items-center justify-center text-3xl shadow-inner">
+                            <i id="quiz-result-icon" class="fa-solid fa-trophy text-amber-500"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 id="quiz-result-title" class="text-2xl font-extrabold text-slate-800">Skor Kamu: 8/8
+                            </h3>
+                            <p id="quiz-result-desc" class="text-sm font-semibold text-pinkSoft-600">Luar biasa! Kamu
+                                benar-benar teman sejati Lady!</p>
+                        </div>
+                        <button onclick="restartLadyQuiz()"
+                            class="px-6 py-3 rounded-2xl bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold text-xs shadow-soft-yellow transition-all flex items-center justify-center space-x-2 mx-auto">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <span>Mainkan Lagi Quiz ini</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEBELAH KANAN: FOTO LADY & DETAILS -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Card Foto Profil Lady Patricia -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center space-y-4">
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-pinkSoft-400 to-yellowSoft-300 rounded-3xl rotate-2 blur-md opacity-70 group-hover:rotate-4 transition-all duration-300">
+                        </div>
+                        <img src="Lady.jpeg" alt="Foto Lady Patricia"
+                            class="relative z-10 w-full h-80 sm:h-96 rounded-2xl object-cover border-4 border-white shadow-md">
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="text-lg font-extrabold text-slate-800">Lady Patricia</h3>
+                        <p class="text-xs text-pinkSoft-600 font-bold">Foto Profil Biodata</p>
+                    </div>
+                </div>
+
+                <!-- Card Music Player: Merry Christmas, I Miss You -->
+                <div
+                    class="bg-gradient-to-br from-pinkSoft-50 via-white to-yellowSoft-50 p-6 rounded-3xl border border-pinkSoft-200/80 shadow-sm space-y-4 relative overflow-hidden group">
+                    <div
+                        class="absolute -right-6 -bottom-6 w-32 h-32 bg-pinkSoft-300/10 rounded-full blur-2xl pointer-events-none">
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pinkSoft-100 text-pinkSoft-600 text-xs font-bold border border-pinkSoft-200">
+                            <i class="fa-solid fa-music text-pinkSoft-500"></i>
+                            <span>Pemutar Musik Favorit</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-slate-400 flex items-center">
+                            <i class="fa-solid fa-snowflake text-pinkSoft-400 mr-1 animate-pulse"></i> Festive Track
+                        </span>
+                    </div>
+
+                    <!-- Foto Ilustrasi The Notebook -->
+                    <div class="relative overflow-hidden rounded-2xl h-44 bg-slate-900 border border-slate-100 group">
+                        <img src="The Notebook.jpg" alt="The Notebook - Merry Christmas, I Miss You"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent p-4 flex flex-col justify-end">
+                            <p class="text-xs font-semibold text-white/90 leading-tight">Still waiting for a text that
+                                will never come.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="relative w-14 h-14 rounded-2xl overflow-hidden shadow-md flex-shrink-0 bg-slate-900 border-2 border-white group-hover:scale-105 transition-transform">
+                            <img src="The Notebook.jpg" alt="Album Cover" class="w-full h-full object-cover opacity-90">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-center justify-center">
+                                <i id="player-disc-icon" class="fa-solid fa-compact-disc text-white/90 text-xl"
+                                    style="transition: transform 0.5s;"></i>
+                            </div>
+                        </div>
+
+                        <div class="flex-grow min-w-0">
+                            <h3 class="text-base font-extrabold text-slate-800 truncate">Merry Christmas, I Miss You
+                            </h3>
+                            <p class="text-xs text-pinkSoft-600 font-semibold truncate">Lady's Special Song</p>
+                            <div class="flex items-center space-x-1.5 mt-2">
+                                <span class="eq-bar w-1 bg-pinkSoft-400 rounded-full h-2 transition-all"></span>
+                                <span class="eq-bar w-1 bg-pinkSoft-500 rounded-full h-4 transition-all"></span>
+                                <span class="eq-bar w-1 bg-yellow-400 rounded-full h-3 transition-all"></span>
+                                <span class="eq-bar w-1 bg-pinkSoft-400 rounded-full h-5 transition-all"></span>
+                                <span class="eq-bar w-1 bg-pinkSoft-600 rounded-full h-2 transition-all"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audio Progress Bar -->
+                    <div class="space-y-1.5 pt-1">
+                        <div class="w-full bg-slate-200/80 rounded-full h-2 cursor-pointer relative overflow-hidden"
+                            id="progress-container" onclick="seekAudio(event)">
+                            <div id="progress-bar"
+                                class="bg-gradient-to-r from-pinkSoft-400 to-yellow-400 h-2 rounded-full w-0 transition-all duration-150">
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-[11px] font-bold text-slate-400">
+                            <span id="current-time">0:00</span>
+                            <span id="total-duration">4.06</span>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="flex items-center justify-between pt-1">
+                        <button onclick="rewindAudio()"
+                            class="w-9 h-9 rounded-xl bg-white hover:bg-slate-100 text-slate-600 flex items-center justify-center border border-slate-200 transition-all text-xs"
+                            title="Mundur 10 detik">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </button>
+
+                        <button id="play-pause-btn" onclick="togglePlayMusic()"
+                            class="w-12 h-12 rounded-2xl bg-pinkSoft-500 hover:bg-pinkSoft-600 text-white flex items-center justify-center shadow-soft-pink transition-all text-lg font-bold">
+                            <i id="play-icon" class="fa-solid fa-play ml-0.5"></i>
+                        </button>
+
+                        <button onclick="forwardAudio()"
+                            class="w-9 h-9 rounded-xl bg-white hover:bg-slate-100 text-slate-600 flex items-center justify-center border border-slate-200 transition-all text-xs"
+                            title="Maju 10 detik">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </button>
+
+                        <button id="mute-btn" onclick="toggleMuteAudio()"
+                            class="w-9 h-9 rounded-xl bg-white hover:bg-slate-100 text-slate-600 flex items-center justify-center border border-slate-200 transition-all text-xs"
+                            title="Mute/Unmute">
+                            <i id="volume-icon" class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <audio id="christmas-audio" preload="metadata" src="Merry Christmas, I Miss You.mp3"></audio>
+                </div>
+
+                <!-- Card Keahlian Utama -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
+                    <h2 class="text-xl font-bold text-slate-800 flex items-center space-x-2">
+                        <i class="fa-solid fa-sliders text-yellowSoft-500"></i>
+                        <span>Keahlian Utama</span>
+                    </h2>
+
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-bold">
+                            <span class="text-slate-700">HTML5, CSS3 & Tailwind</span>
+                            <span class="text-pinkSoft-600">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-pinkSoft-400 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-bold">
+                            <span class="text-slate-700">JavaScript Basic & DOM</span>
+                            <span class="text-pinkSoft-600">80%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-pinkSoft-400 h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-bold">
+                            <span class="text-slate-700">Penulisan Esai & Opini (B. Indonesia)</span>
+                            <span class="text-yellow-700">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tautan Sosial Media -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm space-y-4">
+                    <h2 class="text-lg font-bold text-slate-800">Tautan Sosial Media</h2>
+                    <div class="space-y-3">
+                        <a href="https://wa.me/6285817135476" target="_blank"
+                            class="flex items-center justify-between p-3 rounded-2xl bg-pinkSoft-50 hover:bg-pinkSoft-100 transition-all">
+                            <div class="flex items-center space-x-3 text-slate-700 text-sm font-semibold">
+                                <i class="fa-brands fa-whatsapp text-pinkSoft-600 text-lg"></i>
+                                <span>whatsapp</span>
+                            </div>
+                            <span class="text-xs text-pinkSoft-600 font-bold">085817135476</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@anakdonaldtrump?_r=1&_t=ZS-98Cxaj7nFjh" target="_blank"
+                            class="flex items-center justify-between p-3 rounded-2xl bg-slate-100 hover:bg-slate-200 transition-all">
+                            <div class="flex items-center space-x-3 text-slate-700 text-sm font-semibold">
+                                <i class="fa-brands fa-tiktok text-slate-800 text-lg"></i>
+                                <span>tiktok</span>
+                            </div>
+                            <span class="text-xs text-slate-700 font-bold">@anakdonaldtrump</span>
+                        </a>
+                        <a href="https://www.instagram.com/ladyypatricia?igsh=MWQyYTc3c3VibTVvbQ==" target="_blank"
+                            class="flex items-center justify-between p-3 rounded-2xl bg-yellowSoft-100 hover:bg-yellowSoft-200 transition-all">
+                            <div class="flex items-center space-x-3 text-slate-700 text-sm font-semibold">
+                                <i class="fa-brands fa-instagram text-yellow-700 text-lg"></i>
+                                <span>instagram</span>
+                            </div>
+                            <span class="text-xs text-yellow-800 font-bold">@ladyypatricia</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200/80 mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pinkSoft-400 to-yellowSoft-300 flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-extrabold text-slate-800">My<span
+                                class="text-pinkSoft-500">Portfolio</span></span>
+                        <p class="text-xs text-slate-400">Profil Siswa Sekolah</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-pinkSoft-600 transition-colors">Dashboard</a>
+                    <a href="profil.html" class="hover:text-pinkSoft-600 transition-colors">Profil</a>
+                    <a href="jadwal.html" class="hover:text-pinkSoft-600 transition-colors">Jadwal</a>
+                    <a href="informatika.html" class="hover:text-pinkSoft-600 transition-colors">Informatika</a>
+                    <a href="bahasa-indonesia.html" class="hover:text-pinkSoft-600 transition-colors">Bahasa
+                        Indonesia</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <a href="https://www.instagram.com/ladyypatricia?igsh=MWQyYTc3c3VibTVvbQ==" target="_blank"
+                        class="w-9 h-9 rounded-xl bg-pinkSoft-50 text-pinkSoft-600 flex items-center justify-center text-sm"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@anakdonaldtrump?_r=1&_t=ZS-98Cxaj7nFjh" target="_blank"
+                        class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-sm"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <script src="audio-player.js"></script>
+            <script>
+                function toggleMobileMenu() {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                }
+
+                // Connect Profil Page Player controls with window.sharedAudio
+                const getAudio = () => window.sharedAudio || document.getElementById('christmas-audio');
+                const playBtn = document.getElementById('play-pause-btn');
+                const playIcon = document.getElementById('play-icon');
+                const progressBar = document.getElementById('progress-bar');
+                const currentTimeEl = document.getElementById('current-time');
+                const durationEl = document.getElementById('total-duration');
+                const volumeIcon = document.getElementById('volume-icon');
+                const discIcon = document.getElementById('player-disc-icon');
+                const eqBars = document.querySelectorAll('.eq-bar');
+
+                let rotationAngle = 0;
+                let rotationInterval = null;
+
+                function formatTime(seconds) {
+                    if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+                }
+
+                function syncProfilPlayerUI() {
+                    const audio = getAudio();
+                    if (!audio) return;
+
+                    const isPlaying = !audio.paused && !audio.ended;
+                    if (playIcon) playIcon.className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play ml-0.5';
+                    if (volumeIcon) volumeIcon.className = audio.muted ? 'fa-solid fa-volume-xmark text-pinkSoft-500' : 'fa-solid fa-volume-high';
+
+                    if (isPlaying) {
+                        if (!rotationInterval) {
+                            rotationInterval = setInterval(() => {
+                                rotationAngle = (rotationAngle + 3) % 360;
+                                if (discIcon) discIcon.style.transform = `rotate(${rotationAngle}deg)`;
+
+                                eqBars.forEach(bar => {
+                                    const h = Math.floor(Math.random() * 16) + 4;
+                                    bar.style.height = `${h}px`;
+                                });
+                            }, 100);
+                        }
+                    } else {
+                        if (rotationInterval) {
+                            clearInterval(rotationInterval);
+                            rotationInterval = null;
+                        }
+                        eqBars.forEach(bar => bar.style.height = '4px');
+                    }
+
+                    if (audio.duration && progressBar && currentTimeEl && durationEl) {
+                        const pct = (audio.currentTime / audio.duration) * 100;
+                        progressBar.style.width = `${pct}%`;
+                        currentTimeEl.textContent = formatTime(audio.currentTime);
+                        durationEl.textContent = formatTime(audio.duration);
+                    }
+                }
+
+                window.syncProfilPlayerUI = syncProfilPlayerUI;
+
+                function togglePlayMusic() {
+                    const audio = getAudio();
+                    if (!audio) return;
+
+                    if (audio.paused) {
+                        audio.play().catch(() => { });
+                    } else {
+                        audio.pause();
+                    }
+                    if (window.GlobalMusicController) window.GlobalMusicController.saveState();
+                    syncProfilPlayerUI();
+                }
+
+                function seekAudio(e) {
+                    const audio = getAudio();
+                    if (!audio || !audio.duration) return;
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    audio.currentTime = pos * audio.duration;
+                    if (window.GlobalMusicController) window.GlobalMusicController.saveState();
+                    syncProfilPlayerUI();
+                }
+
+                function rewindAudio() {
+                    const audio = getAudio();
+                    if (!audio) return;
+                    audio.currentTime = Math.max(0, audio.currentTime - 10);
+                    if (window.GlobalMusicController) window.GlobalMusicController.saveState();
+                    syncProfilPlayerUI();
+                }
+
+                function forwardAudio() {
+                    const audio = getAudio();
+                    if (!audio || !audio.duration) return;
+                    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+                    if (window.GlobalMusicController) window.GlobalMusicController.saveState();
+                    syncProfilPlayerUI();
+                }
+
+                function toggleMuteAudio() {
+                    const audio = getAudio();
+                    if (!audio) return;
+                    audio.muted = !audio.muted;
+                    if (window.GlobalMusicController) window.GlobalMusicController.saveState();
+                    syncProfilPlayerUI();
+                }
+
+                const sharedAudio = getAudio();
+                if (sharedAudio) {
+                    sharedAudio.addEventListener('timeupdate', syncProfilPlayerUI);
+                    sharedAudio.addEventListener('play', syncProfilPlayerUI);
+                    sharedAudio.addEventListener('pause', syncProfilPlayerUI);
+                    sharedAudio.addEventListener('ended', syncProfilPlayerUI);
+                }
+
+                syncProfilPlayerUI();
+
+                // Quiz Game Controller: "Seberapa Kenal Kamu dengan Lady?"
+                const ladyQuizQuestions = [
+                    {
+                        q: "1. Siapakah nama lengkap dari siswa pemilik profil website ini?",
+                        options: ["Lady Patricia", "Lady Diana", "Patricia Amanda", "Lady Rose"],
+                        answer: 0,
+                        info: "Benar! Nama lengkapnya adalah Lady Patricia."
+                    },
+                    {
+                        q: "2. Di kelas manakah Lady Patricia saat ini belajar?",
+                        options: ["Kelas X-1", "Kelas XI-3", "Kelas XII-2", "Kelas XI-5"],
+                        answer: 1,
+                        info: "Tepat! Lady duduk di kelas XI-3."
+                    },
+                    {
+                        q: "3. Apa salah satu bidang hukum yang sangat diminati oleh Lady?",
+                        options: ["Hukum Perdata", "Hukum Pidana", "Hukum Internasional", "Hukum Tata Negara"],
+                        answer: 1,
+                        info: "Benar! Lady sangat tertarik pada bidang Hukum Pidana."
+                    },
+                    {
+                        q: "4. Lagu favorit yang paling sering Lady dengar?",
+                        options: ["Thinking Of You", "Merry Christmas, I Miss You", "Till My Heartaches End", "If I Knew"],
+                        answer: 2,
+                        info: "Sempurna! Lagunya berjudul 'Till My Heartaches End'."
+                    },
+                    {
+                        q: "5. Film drama romantis apa yang gambarnya dijadikan visual banner pemutar musik Lady?",
+                        options: ["Titanic", "The Notebook", "La La Land", "Pride and Prejudice"],
+                        answer: 1,
+                        info: "Hebat! Visual gambarnya berasal dari file 'The Notebook'."
+                    },
+                    {
+                        q: "6. Apa nama akun TikTok resmi milik Lady Patricia?",
+                        options: ["@ladyypatricia", "@anakdonaldtrump", "@patricialady", "@ladystudent"],
+                        answer: 1,
+                        info: "Tepat sekali! Akun TikTok Lady adalah @anakdonaldtrump."
+                    },
+                    {
+                        q: "7. Keahlian utama di bidang penulisan apa yang dikuasai Lady hingga 95%?",
+                        options: ["Penulisan Esai & Opini (B. Indonesia)", "Bahasa Mandarin", "Bahasa Inggris", "Bahasa Prancis"],
+                        answer: 0,
+                        info: "Benar! Penulisan Esai & Opini Bahasa Indonesia adalah keahlian utama Lady."
+                    },
+                    {
+                        q: "8. Siapa cowo yang sangat dicintai oleh Lady?",
+                        options: ["Kim Mingyu", "Cha Eunwoo", "Park Bo-gum", "Lee Min-ho"],
+                        answer: 0,
+                        info: "Tepat sekali! Cowo yang sangat dicintai oleh Lady adalah Kim Mingyu! ❤️"
+                    }
+                ];
+
+                let currentQuizIdx = 0;
+                let quizScore = 0;
+                let selectedOptionIdx = null;
+
+                function loadQuizQuestion() {
+                    if (!document.getElementById('lady-quiz-card')) return;
+                    const item = ladyQuizQuestions[currentQuizIdx];
+                    if (!item) return;
+
+                    document.getElementById('quiz-current-num').textContent = currentQuizIdx + 1;
+                    document.getElementById('quiz-progress-bar').style.width = `${((currentQuizIdx + 1) / ladyQuizQuestions.length) * 100}%`;
+                    document.getElementById('quiz-question-text').textContent = item.q;
+
+                    const container = document.getElementById('quiz-options-container');
+                    container.innerHTML = '';
+
+                    item.options.forEach((optText, idx) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'w-full text-left p-3.5 rounded-2xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 hover:border-pinkSoft-400 hover:bg-pinkSoft-50/50 transition-all flex items-center justify-between group';
+                        btn.onclick = () => selectQuizOption(idx);
+                        btn.innerHTML = `
+                            <div class="flex items-center space-x-3">
+                                <span class="w-6 h-6 rounded-xl bg-slate-100 text-slate-600 font-bold text-[11px] flex items-center justify-center group-hover:bg-pinkSoft-500 group-hover:text-white transition-colors">
+                                    ${String.fromCharCode(65 + idx)}
+                                </span>
+                                <span>${optText}</span>
+                            </div>
+                            <i class="fa-regular fa-circle text-slate-300 group-hover:text-pinkSoft-500"></i>
+                        `;
+                        container.appendChild(btn);
+                    });
+
+                    document.getElementById('quiz-feedback-box').classList.add('hidden');
+                    selectedOptionIdx = null;
+                }
+
+                function selectQuizOption(idx) {
+                    if (selectedOptionIdx !== null) return;
+                    selectedOptionIdx = idx;
+
+                    const item = ladyQuizQuestions[currentQuizIdx];
+                    const isCorrect = (idx === item.answer);
+                    if (isCorrect) quizScore++;
+
+                    const buttons = document.querySelectorAll('#quiz-options-container button');
+                    buttons.forEach((btn, bIdx) => {
+                        btn.disabled = true;
+                        if (bIdx === item.answer) {
+                            btn.className = 'w-full text-left p-3.5 rounded-2xl bg-emerald-50 border-2 border-emerald-500 text-xs font-bold text-emerald-800 flex items-center justify-between';
+                        } else if (bIdx === idx && !isCorrect) {
+                            btn.className = 'w-full text-left p-3.5 rounded-2xl bg-rose-50 border-2 border-rose-400 text-xs font-bold text-rose-800 flex items-center justify-between';
+                        }
+                    });
+
+                    const feedbackMsg = document.getElementById('quiz-feedback-msg');
+                    if (isCorrect) {
+                        feedbackMsg.className = 'p-3.5 rounded-2xl text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 flex items-center space-x-2';
+                        feedbackMsg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-base"></i> <span>Jawaban Kamu Benar! ${item.info}</span>`;
+                    } else {
+                        feedbackMsg.className = 'p-3.5 rounded-2xl text-xs font-bold bg-rose-100 text-rose-800 border border-rose-200 flex items-center space-x-2';
+                        feedbackMsg.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 text-base"></i> <span>Kurang Tepat! Jawaban yang benar adalah: ${item.options[item.answer]}</span>`;
+                    }
+
+                    document.getElementById('quiz-feedback-box').classList.remove('hidden');
+                }
+
+                function nextQuizQuestion() {
+                    currentQuizIdx++;
+                    if (currentQuizIdx < ladyQuizQuestions.length) {
+                        loadQuizQuestion();
+                    } else {
+                        showQuizResult();
+                    }
+                }
+
+                function showQuizResult() {
+                    document.getElementById('quiz-question-box').classList.add('hidden');
+                    document.getElementById('quiz-step-badge').classList.add('hidden');
+                    const resultBox = document.getElementById('quiz-result-box');
+                    resultBox.classList.remove('hidden');
+
+                    document.getElementById('quiz-result-title').textContent = `Skor Kamu: ${quizScore}/8`;
+
+                    const descEl = document.getElementById('quiz-result-desc');
+                    const iconEl = document.getElementById('quiz-result-icon');
+
+                    if (quizScore === 8) {
+                        descEl.textContent = '🎉 Luar biasa! Kamu benar-benar Sahabat Sejati Lady Patricia!';
+                        iconEl.className = 'fa-solid fa-trophy text-amber-500';
+                    } else if (quizScore >= 5) {
+                        descEl.textContent = '👍 Bagus sekali! Kamu sudah cukup mengenal sosok Lady dengan baik!';
+                        iconEl.className = 'fa-solid fa-medal text-pinkSoft-500';
+                    } else {
+                        descEl.textContent = '😊 Tidak apa-apa! Yuk baca profil Lady lebih lanjut dan coba lagi!';
+                        iconEl.className = 'fa-solid fa-heart text-yellow-500';
+                    }
+                }
+
+                function restartLadyQuiz() {
+                    currentQuizIdx = 0;
+                    quizScore = 0;
+                    selectedOptionIdx = null;
+
+                    document.getElementById('quiz-result-box').classList.add('hidden');
+                    document.getElementById('quiz-question-box').classList.remove('hidden');
+                    document.getElementById('quiz-step-badge').classList.remove('hidden');
+
+                    loadQuizQuestion();
+                }
+
+                window.loadQuizQuestion = loadQuizQuestion;
+                window.selectQuizOption = selectQuizOption;
+                window.nextQuizQuestion = nextQuizQuestion;
+                window.restartLadyQuiz = restartLadyQuiz;
+
+                loadQuizQuestion();
+            </script>
+</body>
+
+</html>

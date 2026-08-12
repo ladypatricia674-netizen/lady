@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Portofolio & Tugas Sekolah</title>
+    <meta name="description"
+        content="Dashboard utama portofolio siswa dan kumpulan tugas sekolah Informatika & Bahasa Indonesia.">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN & Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkSoft: {
+                            50: '#fff5f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                        },
+                        yellowSoft: {
+                            50: '#fffdf0',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                        },
+                        pastelBg: '#FCFCFB',
+                        cardBg: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-pink': '0 10px 30px -10px rgba(244, 114, 182, 0.25)',
+                        'soft-yellow': '0 10px 30px -10px rgba(250, 204, 21, 0.25)',
+                        'glass': '0 8px 32px 0 rgba(236, 72, 153, 0.07)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF9F6;
+            color: #334155;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .bg-soft-gradient {
+            background: linear-gradient(135deg, #fce7f3 0%, #fffdf0 50%, #ffffff 100%);
+        }
+
+        .text-gradient-pink {
+            background: linear-gradient(135deg, #db2777 0%, #eab308 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-tab.active {
+            background-color: #fce7f3;
+            color: #db2777;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(244, 114, 182, 0.2);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col selection:bg-pinkSoft-200 selection:text-pinkSoft-600">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-pinkSoft-100/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo Brand -->
+                <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                    <div
+                        class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-pinkSoft-400 to-yellowSoft-300 flex items-center justify-center text-white shadow-soft-pink">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-slate-800">My<span
+                                class="text-pinkSoft-500">Portfolio</span></span>
+                        <span
+                            class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-yellowSoft-100 text-yellowSoft-700 border border-yellowSoft-200">Siswa
+                            Aktif</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav
+                    class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-slate-100/70 p-1.5 rounded-2xl border border-slate-200/60">
+                    <a href="index.html"
+                        class="nav-tab active px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 transition-all duration-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-house-chimney text-xs"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="profil.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 transition-all duration-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-user text-xs"></i>
+                        <span>Profil</span>
+                    </a>
+                    <a href="jadwal.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 transition-all duration-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-calendar-days text-xs"></i>
+                        <span>Jadwal</span>
+                    </a>
+                    <a href="informatika.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 transition-all duration-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-code text-xs"></i>
+                        <span>Informatika</span>
+                    </a>
+                    <a href="bahasa-indonesia.html"
+                        class="nav-tab px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-pinkSoft-600 transition-all duration-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-book-open text-xs"></i>
+                        <span>Bahasa Indonesia</span>
+                    </a>
+                </nav>
+
+                <!-- Social Quick Action Buttons -->
+                <div class="hidden lg:flex items-center space-x-2">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-xl bg-pinkSoft-50 text-pinkSoft-500 hover:bg-pinkSoft-400 hover:text-white transition-all duration-200 flex items-center justify-center border border-pinkSoft-100 shadow-sm"
+                        title="Instagram">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-800 hover:text-white transition-all duration-200 flex items-center justify-center border border-slate-200 shadow-sm"
+                        title="GitHub">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-xl bg-yellowSoft-100 text-yellow-700 hover:bg-yellow-400 hover:text-slate-900 transition-all duration-200 flex items-center justify-center border border-yellowSoft-200 shadow-sm"
+                        title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
+                        class="w-10 h-10 rounded-xl bg-pinkSoft-100 text-pinkSoft-600 flex items-center justify-center focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 border-b border-pinkSoft-100 px-4 pt-2 pb-6 space-y-2 transition-all">
+            <a href="index.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold bg-pinkSoft-100 text-pinkSoft-600 flex items-center space-x-3">
+                <i class="fa-solid fa-house-chimney w-5 text-pinkSoft-500"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="profil.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 hover:text-pinkSoft-600 flex items-center space-x-3">
+                <i class="fa-solid fa-user w-5 text-pinkSoft-400"></i>
+                <span>Profil Saya</span>
+            </a>
+            <a href="jadwal.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 hover:text-pinkSoft-600 flex items-center space-x-3">
+                <i class="fa-solid fa-calendar-days w-5 text-yellowSoft-500"></i>
+                <span>Jadwal Pelajaran</span>
+            </a>
+            <a href="informatika.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 hover:text-pinkSoft-600 flex items-center space-x-3">
+                <i class="fa-solid fa-code w-5 text-pinkSoft-400"></i>
+                <span>Informatika</span>
+            </a>
+            <a href="bahasa-indonesia.html"
+                class="w-full text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-pinkSoft-50 hover:text-pinkSoft-600 flex items-center space-x-3">
+                <i class="fa-solid fa-book-open w-5 text-yellowSoft-500"></i>
+                <span>Bahasa Indonesia</span>
+            </a>
+
+            <!-- Social media on mobile menu -->
+            <div class="pt-4 border-t border-slate-100 flex justify-center space-x-4">
+                <a href="https://instagram.com" target="_blank"
+                    class="w-10 h-10 rounded-full bg-pinkSoft-100 text-pinkSoft-600 flex items-center justify-center">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://github.com" target="_blank"
+                    class="w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank"
+                    class="w-10 h-10 rounded-full bg-yellowSoft-100 text-yellow-700 flex items-center justify-center">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank"
+                    class="w-10 h-10 rounded-full bg-slate-100 text-slate-800 flex items-center justify-center">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <!-- Hero Welcome Card -->
+        <div
+            class="relative overflow-hidden rounded-3xl bg-soft-gradient border border-pinkSoft-200/60 shadow-glass p-6 sm:p-10">
+            <div
+                class="absolute -right-10 -bottom-10 w-64 h-64 bg-yellowSoft-200/40 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute -left-10 -top-10 w-64 h-64 bg-pinkSoft-200/40 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Left Hero Info -->
+                <div class="lg:col-span-8 space-y-4">
+                    <div
+                        class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/80 border border-pinkSoft-200 text-xs font-bold text-pinkSoft-600 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-pinkSoft-500 animate-pulse"></span>
+                        <span>Selamat Datang di Portal Tugas & Profil Saya</span>
+                    </div>
+                    <h1
+                        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight leading-tight">
+                        Halo! Saya <span class="text-gradient-pink">Lady Patricia</span> 👋
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        Selamat datang di website portofolio pribadi saya. Di sini Anda dapat menemukan informasi profil
+                        saya, jadwal pelajaran sekolah, serta kumpulan dokumentasi tugas terpisah untuk mata pelajaran
+                        <strong class="text-pinkSoft-600">Informatika</strong> dan <strong class="text-amber-600">Bahasa
+                            Indonesia</strong>.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <a href="informatika.html"
+                            class="px-6 py-3 rounded-xl bg-pinkSoft-500 hover:bg-pinkSoft-600 text-white font-semibold text-sm shadow-soft-pink transition-all duration-200 flex items-center space-x-2 transform hover:-translate-y-0.5">
+                            <span>Informatika</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="bahasa-indonesia.html"
+                            class="px-6 py-3 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold text-sm shadow-soft-yellow transition-all duration-200 flex items-center space-x-2 transform hover:-translate-y-0.5">
+                            <span>Bahasa Indonesia</span>
+                            <i class="fa-solid fa-book-open"></i>
+                        </a>
+                        <a href="profil.html"
+                            class="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-200 shadow-sm transition-all duration-200 flex items-center space-x-2">
+                            <i class="fa-regular fa-user"></i>
+                            <span>Lihat Profil</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Avatar Display -->
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-pinkSoft-400 to-yellowSoft-300 rounded-3xl rotate-3 blur-md opacity-70 group-hover:rotate-6 transition-all duration-300">
+                        </div>
+                        <img src="assets/Lady.jpeg" alt="Foto Lady"
+                            class="relative z-10 w-48 h-48 sm:w-56 sm:h-56 rounded-3xl object-cover border-4 border-white shadow-xl">
+                        <div
+                            class="absolute -bottom-3 -right-3 z-20 bg-white px-3 py-1.5 rounded-xl shadow-md border border-slate-100 flex items-center space-x-2">
+                            <i class="fa-solid fa-star text-yellowSoft-500"></i>
+                            <span class="text-xs font-bold text-slate-700">Nilai Rata-rata 95.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Highlight Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-pinkSoft-100 text-pinkSoft-600 flex items-center justify-center">
+                        <i class="fa-solid fa-folder-closed text-lg"></i>
+                    </div>
+                    <span
+                        class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">Lengkap</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-800">12</h3>
+                <p class="text-xs font-medium text-slate-500">Total Tugas Sekolah</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-yellowSoft-100 text-yellow-700 flex items-center justify-center">
+                        <i class="fa-solid fa-laptop-code text-lg"></i>
+                    </div>
+                    <span
+                        class="text-xs font-semibold text-pinkSoft-600 bg-pinkSoft-50 px-2 py-0.5 rounded-md">Informatika</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-800">6 Projek</h3>
+                <p class="text-xs font-medium text-slate-500">Pemrograman & UI/UX</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-pinkSoft-100 text-pinkSoft-600 flex items-center justify-center">
+                        <i class="fa-solid fa-pen-nib text-lg"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">B.
+                        Indonesia</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-800">6 Karya</h3>
+                <p class="text-xs font-medium text-slate-500">Esai, LHO & Resensi</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-yellowSoft-100 text-yellow-700 flex items-center justify-center">
+                        <i class="fa-solid fa-award text-lg"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">Predikat
+                        A</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-800">98/100</h3>
+                <p class="text-xs font-medium text-slate-500">Nilai Tertinggi</p>
+            </div>
+        </div>
+
+        <!-- Section Direct Quick Portal Links -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Portal Card 1: Informatika -->
+            <div
+                class="bg-gradient-to-br from-pinkSoft-50 to-white p-8 rounded-3xl border border-pinkSoft-200/80 shadow-sm space-y-4 relative overflow-hidden group">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-pinkSoft-500 text-white flex items-center justify-center text-2xl shadow-soft-pink">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-pinkSoft-600 uppercase tracking-wider">Mata Pelajaran #1</span>
+                    <h2 class="text-2xl font-bold text-slate-800 mt-1">Informatika</h2>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Halaman khusus berisi daftar tugas pemrograman web, simulasi algoritma Python, dan prototipe
+                        aplikasi UI/UX lengkap dengan source code.
+                    </p>
+                </div>
+                <div class="pt-2">
+                    <a href="informatika.html"
+                        class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-pinkSoft-500 hover:bg-pinkSoft-600 text-white text-xs font-bold shadow-soft-pink transition-all">
+                        <span>Buka Informatika</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Card 2: Bahasa Indonesia -->
+            <div
+                class="bg-gradient-to-br from-yellowSoft-50 to-white p-8 rounded-3xl border border-yellowSoft-200/80 shadow-sm space-y-4 relative overflow-hidden group">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-yellow-400 text-slate-900 flex items-center justify-center text-2xl shadow-soft-yellow">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">Mata Pelajaran #2</span>
+                    <h2 class="text-2xl font-bold text-slate-800 mt-1">Bahasa Indonesia</h2>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Halaman khusus berisi kumpulan esai populer, laporan hasil observasi lingkungan, karya sastra,
+                        dan resensi buku.
+                    </p>
+                </div>
+                <div class="pt-2">
+                    <a href="bahasa-indonesia.html"
+                        class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-slate-900 text-xs font-bold shadow-soft-yellow transition-all">
+                        <span>Buka Bahasa Indonesia</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-white border-t border-slate-200/80 mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pinkSoft-400 to-yellowSoft-300 flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-extrabold text-slate-800">My<span
+                                class="text-pinkSoft-500">Portfolio</span></span>
+                        <p class="text-xs text-slate-400">Dokumentasi Tugas & Profil Siswa Sekolah</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-pinkSoft-600 transition-colors">Dashboard</a>
+                    <a href="profil.html" class="hover:text-pinkSoft-600 transition-colors">Profil</a>
+                    <a href="jadwal.html" class="hover:text-pinkSoft-600 transition-colors">Jadwal</a>
+                    <a href="informatika.html" class="hover:text-pinkSoft-600 transition-colors">Informatika</a>
+                    <a href="bahasa-indonesia.html" class="hover:text-pinkSoft-600 transition-colors">Bahasa
+                        Indonesia</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <a href="https://instagram.com" target="_blank"
+                        class="w-9 h-9 rounded-xl bg-pinkSoft-50 text-pinkSoft-600 hover:bg-pinkSoft-500 hover:text-white transition-all flex items-center justify-center text-sm"
+                        title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank"
+                        class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-800 hover:text-white transition-all flex items-center justify-center text-sm"
+                        title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank"
+                        class="w-9 h-9 rounded-xl bg-yellowSoft-100 text-yellow-700 hover:bg-yellow-400 hover:text-slate-900 transition-all flex items-center justify-center text-sm"
+                        title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-100 pt-6 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; 2026 MyPortfolio Siswa. Hak Cipta Dilindungi.</p>
+                <p class="flex items-center space-x-1">
+                    <span>Soft Pink & Soft Yellow Theme</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
